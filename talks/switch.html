@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Switch Statments</title>
+  
+  <meta name="description" content="A jQuery library for modern HTML presentations">
+  <meta name="author" content="Caleb Troughton">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+  
+  <link href='http://fonts.googleapis.com/css?family=Volkhov:700,700italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- Core and extension CSS files -->
+  <link rel="stylesheet" href="../deckjs/core/deck.core.css">
+  <link rel="stylesheet" href="../deckjs/core/hash/deck.hash.css">
+  <link rel="stylesheet" href="../deckjs/prettify/prettify.css">
+  <link rel="stylesheet" href="../deckjs/prettify/solarized.css">
+  
+  <!-- Style theme-->
+  <link rel="stylesheet" href="../deckjs/themes/theme.css">
+  
+  <!-- Transition theme.-->
+  <link rel="stylesheet" href="../deckjs/themes/horizontal-slide.css">
+
+  <script src="../deckjs/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+  <!-- Begin slides -->
+    <section class="slide" id="title-slide">
+      <div class="vcenter">
+        <h1>Switch Statements</h1>
+        <h3>The Good, The Bad, and The Ugly</h3>
+        <p>Thom Crescenzi</p>
+      </div>
+    </section>
+
+    <section class="slide" id="the-good">
+      <h2>The Good</h2>
+      <ul>
+        <section class="slide"><li>Compacts your code</li></section>
+        <section class="slide"><pre class="prettyprint"><code>
+          int x=1;
+          switch (x){
+            case 1:
+             system.out.println("It's 1!");
+            case 2:
+              system.out.println("It's 2!");
+            default
+              system.out.println("I only like 1 and 2");
+          }
+        </code></pre></section>
+      </ul>
+    </section>
+
+    <section class="slide" id="the-good2">
+      <h2>The Good</h2>
+      <ul>
+        <section class="slide"><li>Can be very appropriate and readable</li></section>
+        <section class="slide"><pre class="prettyprint"><code>
+          char underCase='c';
+          switch (underCase){
+            case 'a':
+             return 'A';
+            case 'b':
+              return 'B';
+            //and so on
+          }
+        </code></pre></section>
+      </ul>
+    </section>
+
+    <section class="slide" id="the-bad">
+      <h2>The Bad</h2>
+      <ul>
+        <section class="slide"><li>Doesn't actually reduce code size in a meanginful way</li></section>
+        <section class="slide"><pre class="prettyprint"><code>
+          int x=1;
+          switch (x){
+            case 1:
+             system.out.println("It's 1!");
+            case 2:
+              system.out.println("It's 2!");
+            default
+              system.out.println("I only like 1 and 2");
+          }
+        </code></pre></section>
+        <section class="slide"><pre class="prettyprint"><code>
+          int x=1;
+          if(x==1){
+            system.out.println("It's 1!");
+          }else if(x==2){
+            system.out.println("It's 2!");
+          }else{
+            system.out.println("I only like 1 and 2");
+          }
+        </code></pre></section>
+      </ul>
+    </section>
+
+    <section class="slide" id="bitter-truth">
+      <div id="vcenter">
+        <h1>actually the switch is a line longer</h1>
+      </div>
+    </section>
+
+    <section class="slide" id="the-ugly">
+      <h2>The Ugly</h2>
+      <ul>
+        <section class="slide"><li>Up until now my examples have all had a huge error. Anyone catch it?</li></section>
+        <section class="slide">
+          <pre class="prettyprint"><code>
+          int x=1;
+          switch (x){
+            case 1:
+             system.out.println("It's 1!");
+            case 2:
+              system.out.println("It's 2!");
+            default
+              system.out.println("I only like 1 and 2");
+          }
+        </code></pre>
+        <pre class="prettyprint"><code>
+          int x=1;
+          switch (x){
+            case 1:
+             system.out.println("It's 1!");break;
+            case 2:
+              system.out.println("It's 2!");break;
+            default
+              system.out.println("I only like 1 and 2");
+          }
+        </code></pre></section>
+      </ul>
+    </section>
+
+    <section class="slide" id="fuck-break">
+      <div class="vcenter">
+        <h1>break; sucks</h1>
+      </div>
+    </section>
+
+    <section class="slide" id="ugly-breaks">
+      <h2>Ugly Breaks</h2>
+      <ul>
+        <section class="slide"><li>Sometimes you want it other times you don't</li></section>
+        <section class="slide"><pre class="prettyprint"><code>
+          char underCase='c';
+          switch (underCase){
+            case 'a':
+             return 'A';
+            case 'b':
+              return 'B';
+            //and so on
+          }
+        </code></pre></section>
+       <section class="slide"><div class="vcenter"><h3>Actually works as intended</h3></div></section>
+      </ul>
+    </section>
+
+    <section class="slide" id="switch-danger">
+      <div class="vcenter">
+        <h3>switch is enticing<h3><div class="slide"><h1>but is dangerous and not necessary</h1></div>
+      </div>
+    </section>
+
+    <section class="slide" id="fix-it">
+      <h2>What's Better</h2>
+      <ul>
+        <section class="slide"><li>If Statements</li></section>
+        <section class="slide"><pre class="prettyprint"><code>
+          if($a123 > 3){
+            $a123=0;
+          }
+          if($a123 == 0){
+          } 
+        </code></pre></section>
+        <section class="slide"><div class="vcenter"><h3>Not that if statement</h3></div></section></br></br>
+        <section class="slide"><li>With proper use and clear variable names ifs can be pretty</li></section>
+        <section class="slide"><li>Or even better use pattern matching or guards</li></section>
+      </ul>
+    </section>
+
+    <section class="slide" id="end">
+      <div class="vcenter"> <h3> the end </h3></div>
+    </section>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="../deckjs/core/deck.core.js"></script>
+<script src="../deckjs/core/hash/deck.hash.js"></script>
+<script src="../deckjs/prettify/prettify.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+prettyPrint();
+$(function() {
+  $.deck('.slide');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Switch Statments</title>
+  
+  <meta name="description" content="A jQuery library for modern HTML presentations">
+  <meta name="author" content="Caleb Troughton">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+  
+  <link href='http://fonts.googleapis.com/css?family=Volkhov:700,700italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- Core and extension CSS files -->
+  <link rel="stylesheet" href="../deckjs/core/deck.core.css">
+  <link rel="stylesheet" href="../deckjs/core/hash/deck.hash.css">
+  <link rel="stylesheet" href="../deckjs/prettify/prettify.css">
+  <link rel="stylesheet" href="../deckjs/prettify/solarized.css">
+  <link rel="stylesheet" href="../deckjs/themes/grid.css">
+  
+  <!-- Style theme-->
+  <link rel="stylesheet" href="../deckjs/themes/mononoke.css">
+  
+  <!-- Transition theme.-->
+  <link rel="stylesheet" href="../deckjs/themes/horizontal-slide.css">
+
+  <script src="../deckjs/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+  
+  <section class="slide" id="start">
+    <div class="vcenter"> 
+      <h1>Princess Mononoke</h1>
+      <h3>The Nature of a God</h3>
+      <p>Thom Crescenzi</p>
+  </section>
+
+  <section class="slide" id="setting">
+    <h2>Setting</h2>
+    <blockquote>
+      "In ancient times, the land lay covered in forests, where, from ages long past, dwelt the spirits of the gods. Back then, man and beast lived in harmony, but as time went by, most of the great forests were destroyed. Those that remained were guarded by gigantic beasts who owed their allegiances to the Great Forest Spirit, for those were the days of gods and of demons."
+    </blockquote>
+  </section>
+
+  <section class="slide" id="curse">
+    <h2>The Curse</h2>
+    <ul>
+        <section class="slide">
+          <li>Boar's Curse</li>
+        </section>
+        <section class="slide">
+          <li>Prince Ashitaka's Curse</li>
+        </section>
+        <section class="slide">
+          <li>Together they represent the curse upon the land</li>
+        </section>
+      </ul>
+      <section class="slide">
+        <blockquote>
+          "These days, there are angry ghosts all around us. Dead from wars, sickness, starvation, and nobody cares. So you say you're under a curse. So what, so's the whole damn world."
+        </blockquote>
+      </section>
+  </section>
+
+  <section class="slide" id="humanity">
+    <h2>The Emishi</h2>
+    <ul>
+        <section class="slide">
+          <li>Live in peace with nature far from civilization</li>
+        </section>
+        <section class="slide">
+          <li>Even when attacked by nature they still respect it</li>
+        </section>
+        <section class="slide">
+          <blockquote>"Oh nameless god of rage and hate I bow before you"</blockquote>
+        </section>
+        <section class="slide">
+          <li>Live in harmony with nature and other peoples</li>
+        </section>
+      </ul>
+  </section>
+
+  <section class="slide" id="humanitypart2">
+    <h2>Iron Town</h2>
+    <ul>
+      <section class="slide">
+        <li>Harvest the iron within the forest in order to gain power</li>
+      </section>
+      <section class="slide">
+        <li>Wish to destroy the spirits of nature</li>
+      </section>
+      <section class="slide">
+          <blockquote>"Now watch closely, everyone. I'm going to 
+            show you how to kill a god. A god of life and death. "</blockquote>
+      </section>
+      <section class="slide">
+        <li>While they do not respect nature, they do, almost paradoxically, respect each other</li>
+      </section>
+    </ul>
+  </section>
+
+  <section class="slide" id="shinto">
+    <h2>Shinto</h2>
+    <ul>
+      <section class="slide">
+        <li>Purity and Impurity</li>
+      </section>
+      <section class="slide">
+        <li>God in Nature, Nature as God</li>
+      </section>
+      <section class="slide">
+        <li>Fate</li>
+      </section>
+      <section class="slide">
+        <blockquote>
+          You cannot change fate. However, you can rise to meet it, if you so choose. 
+        </blockquote>
+      </section>
+    </ul>
+  </section>
+
+  <section class="slide" id="finale">
+    <h2>Death & Rebirth</h2>
+    <ul>
+      <section class="slide">
+        <li>The death of a god brings with it the death of the god's domain</li>
+      </section>
+      <section class="slide">
+        <li>Only when the forest begins to die do the humans understand what they did</li>
+      </section>
+      <section class="slide">
+        <li>
+          At dawn the forest is reborn when the head of the Shishigami is returned.
+          With this act the forest once again trusts humans and removes the curse from
+          the land.
+        </li>
+      </section>
+  </section>
+
+  <section class="slide" id="end">
+    <div class="vcenter"> <h3> "Sometimes I think the Gods are laughing at us."  </h3></div>
+  </section>
+
+
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="../deckjs/core/deck.core.js"></script>
+<script src="../deckjs/core/hash/deck.hash.js"></script>
+<script src="../deckjs/prettify/prettify.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+prettyPrint();
+$(function() {
+  $.deck('.slide');
+});
+</script>
+</body>
+</html>
