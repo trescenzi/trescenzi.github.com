@@ -1,0 +1,19 @@
+
+
+body {
+  padding:50px;
+  font:14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#777;
+  font-weight: 400;
+}
+
+.middle{
+  width:860px;
+  margin:0 auto;
+}
+
+header {
+  width:270px;
+  float:left;
+  position:fixed;
+}
