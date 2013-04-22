@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Funcational Programming</title>
+  
+  <meta name="description" content="Why functional">
+  <meta name="author" content="Thomas Crescenzi">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+  
+  <link href='http://fonts.googleapis.com/css?family=Volkhov:700,700italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- Core and extension CSS files -->
+  <link rel="stylesheet" href="../deckjs/core/deck.core.css">
+  <link rel="stylesheet" href="../deckjs/core/hash/deck.hash.css">
+  <link rel="stylesheet" href="../deckjs/prettify/prettify.css">
+  <link rel="stylesheet" href="../deckjs/prettify/solarized.css">
+  
+  <!-- Style theme-->
+  <link rel="stylesheet" href="../deckjs/themes/theme.css">
+  
+  <!-- Transition theme.-->
+  <link rel="stylesheet" href="../deckjs/themes/horizontal-slide.css">
+
+  <script src="../deckjs/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+  <!-- Begin slides -->
+    <section class="slide" id="title-slide">
+      <div class="vcenter">
+        <h1>Practical Functional Programming</h1>
+        <h3>Who, What, and Most Importantly Why</h3>
+        <p>Thom Crescenzi</p>
+      </div>
+    </section>
+
+    <section class="slide" id="who">
+      <div class="vcenter"><h1>Who?</h1></div>
+    </section>
+    
+    <section class="slide" id="Who">
+        <h2>A Bit of History</h2>
+        <ul>
+          <li>
+            <section class="slide">Lambda Calculus
+            <blockquote>Lambda calculus is a formal system in mathematical logic and computer science
+                        for expressing computation by way of variable binding and substitution.</blockquote>
+            </section>
+          </li>
+          <section class="slide"><h3>What the hell does that mean?</h3></section>
+          <li>
+          <section class="slide">Lisp</section>
+            <section class="slide">And its friends: Common Lisp, Scheme, Racket, and Clojure</section>
+          </li>
+          <li>
+            <section class="slide">ML</section>
+          </li>
+          <li>
+            <section class="slide">Haskell</section>
+          </li>
+        </ul>
+        </section>
+
+      <section class="slide" id="young">
+        <h2>Youngins'</h2>
+        <ul>
+          <li><section class="slide">Scala</section></li>
+          <section class="slide">
+            <pre class="prettyprint"><code>
+                def fib( n: Int): Int = n match {
+                  case 0 | 1 => n
+                  case _ => fib(n-1) + fib(n-2)
+                }
+            </code></pre>
+          </section>
+          <li><section class="slide">Clojure</section></li>
+          <section class="slide">
+            <pre class="prettyprint"><code>
+              (defn fib
+                ([] (concat [0 1] (fib 0 1)))
+                  ([a b] (lazy-cons (+ a b) (fib b (+ a b)))))
+            </code></pre>
+          </section>
+        </ul>
+      </section>
+
+      <section class="slide" id="matrix">
+        <div class="vcenter">
+          <img src="http://i.imgur.com/1gF1j.jpg"/>
+        </div>
+      </section>
+
+      <section class="slide" id="What">
+        <div class="vcenter"><h1>What?</h1></div>
+      </section>
+
+      <section class="slide" id="what">
+      <h2>What's So Special</h2>
+        <ul>
+          <section class="slide"><li>Declarative</li></section>
+          <section class="slide"><li>Stateless</li></section>
+          <section class="slide"><li>First Class Functions</li></section>
+          <section class="slide"><li>Purity</li></section>
+          <section class="slide"><li>Haskell</li></section>
+        </ul>
+      </section>
+
+      <section class="slide" id="declarative">
+        <h2>Declarative</h2>
+        <blockquote>A programming paradigm that expresses the logic of a computation without describing its control flow</blockquote>
+        <div class="slide"><center><h3>Lets make a list of numbers 1-5</h3></center></div>
+        <div class="slide">
+          <h3>Declarative</h3>
+          <pre class="prettyprint"><code>
+            let x = take 5 [1..]
+          </code></pre>
+          <h3>Imperative</h3>
+          <pre class="prettyprint"><code>
+            int x = new int[5];
+            for(int i=1; i<6; i++)
+              x[i] = i;
+          </code></pre>
+        </div>
+      </section>
+
+      <section class="slide" id="languages">
+      <div class="vcenter">Moving forward I'm going to be using <section class="slide"><h3>Java</h3>
+        for imperative examples</section> and <div class="slide"><h3>Haskell</h3> for functional examples</div></div>
+      </section>
+
+      <section class="slide" id="state">
+        <h2>State & Purity</h2>
+        <ul>
+          <section class="slide"><li>Immutability</li></section>
+          <section class="slide"><li>Little to no side effects</li></section>
+          <div class="slide"><li>Pure functions always act the same</li></section>
+        </ul>
+      </section> 
+
+      <section class="slide" id="state">
+        <h2>First Class Functions</h2>
+        <ul>
+          <section class="slide"><li>Functions are first-class citizens!</li>
+          <section class="slide"><center><h3>This means you can pass functions into and return functions from other functions</h3></center></slide>
+          <section class="slide"><pre class="prettyprint"><code>
+            square x = x * x
+            map square $ take 5 [1..]
+            [1,4,9,16,25]
+          </code></pre></section>
+        </ul>
+      </section>
+
+      <section class="slide" id="Why">
+        <div class="vcenter"><h1>Why?</h1></div>
+      </section>
+
+      <section class="slide" id="why">
+        <h2>Why Do We Care?</h2>
+        <ul>
+          <div class="slide"><li>Purity provides protection</li></div>
+          <div class="slide"><li>Declarative programs are easier to read than imperative ones</li></div>
+          <div class="slide"><li>First class functions reduce levels of code complexity</li></div>
+        </ul>
+      </section>
+
+      <section class="slide" id="concurrency">
+        <h2>Concurrency</h2>
+        <ul>
+          <div class="slide"><li>Do many things at once!</li></div>
+          <div class="slide"><li>Pure, functional languages do it best</li></div>
+          <div class="slide"><li>Scala and Clojure</li></div>
+        <ul>
+      </section>
+
+      <section class="slide" id="Haskell">
+      <div class="vcenter"><h1>Haskell</h1><h3>A functional language that function languages are afraid of</h3></div>
+      </section>
+
+      <section class="slide" id="haskell">
+        <h2>Haskell</h2>
+        <ul>
+          <div class="slide"><li>Pure and Stateless</li></div>
+          <div class="slide"><li>Declarative</li></div>
+          <div class="slide"><li>First class functions</li></div>
+          <div class="slide"><h3>Yea we got that already...</h3></div>
+        </ul>
+      </section>
+
+      <section class="slide" id="nope">
+      <div class="vcenter"><h1>not like this you didn't</h1></div>
+      </section>
+
+      <section class="slide" id="super">
+      <h2>Super Functional</h2>
+      <ul>
+        <div class="slide"><li>Statically Typed</li></div>
+        <div class="slide"><li>Always Curried</li></div>
+        <div class="slide"><li>Lazy</li></div>
+      </ul>
+      </section>
+
+      <section class="slide" id="tbc">
+      <div class="vcenter"><h3>end?</h3></div>
+      </section>
+
+      <section class="slide" id="static">
+      <h2>Typing</h2>
+      <ul>
+        <div class="slide"><li>Everything has a type</li></div>
+        <div class="slide"><li>Types can be defined</li></div>
+        <div class="slide"><pre class="prettyprint"><code>
+            add :: Int -> Int -> Int
+        </code></pre></div>
+        <div class="slide"><li>Or they are inferred</li></div>
+        <div class="slide"><pre class="prettyprint"><code>
+            add x y = x + y
+            :t add 
+              Num a => a -> a -> a
+        </code></pre></div>
+        </section>
+
+        <section class="slide" id="curry">
+        <h2>Currying</h2>
+        <ul>
+          <div class="slide"><li>Functions only have one parameter</li></div>
+          <div class="slide"><center><h3>Even functions with two parameters</h3></center></div>
+          <div class="slide"><pre class="prettyprint"><code>
+              add x y = x + y
+              add3 = add 3
+              add3 5
+            </code></pre></div>
+            <div class="slide"><li>That is what the -&gt; means</li></div>
+        <div class="slide"><h3>Kinda...</h3></div>
+        </ul>
+        </section>
+        
+        <section class="slide" id="lazy">
+        <h2>Lazy</h2>
+        <ul>
+            <div class="slide"><li>Don't do things till you have to</li></div>
+            <div class="slide"><pre class="prettyprint"><code>
+                take 10 [1..]
+             </code></pre></div>
+           <div class="slide"><li>Infinite Code!</li></div>
+        </ul>
+        </section>
+
+        <section class="slide" id="purity">
+        <h2>Super Pure</h2>
+        <ul>
+          <div class="slide"><li>Purity Enables Code to be Run in Many Orders</li></div>
+          <div class="slide"><h3>This is awesome coupled with Laziness</h3></div>
+        </ul>
+        </section>
+
+      <section class="slide" id="learn">
+      <h2>So You Wana Learn?</h2>
+      <ul>
+        <li><a href="http://learnyouahaskell.com/">Check out Learn You a Haskell</a></li>
+        <li><a href="haskell.com/hoogle">Use Hoogle To Search the Docs</a></li>
+        <h3>Protip: All of Haskell is open source. Want to know how 
+          <a href="http://hackage.haskell.org/packages/archive/base/latest/doc/html/src/Data-List.html">lists</a> work?</h3>
+        <li><a href="http://shuklan.com/haskell/index.html">Check Out This Awesome Free Course</a></li>
+        <li><a href="http://www.haskell.org/haskellwiki/Learning_Haskell">Want More Suggestions?</a></li> 
+       </ul>
+       </section>
+
+       <section class="slide" id="realend">
+       <div class="vcenter"><h3>And that's all folks</h3></div>
+       </section>
+
+
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="../deckjs/core/deck.core.js"></script>
+<script src="../deckjs/core/hash/deck.hash.js"></script>
+<script src="../deckjs/prettify/prettify.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+prettyPrint();
+$(function() {
+  $.deck('.slide');
+});
+</script>
+</body>
+</html>

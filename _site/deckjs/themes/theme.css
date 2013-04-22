@@ -1,0 +1,84 @@
+/* 
+Thoms's Theme - deck.js
+
+author: @trescenzi
+*/
+.deck-container {
+    font-family: "Oxygen";
+    font-size: 1.5em;
+    background: #F5EDE3;
+    color: #333;
+}
+.deck-container .slide {
+    background-color: #F5EDE3;
+    border: none;
+}
+.deck-container .slide .no-border {
+    border: 0;
+}
+.deck-container .slide .accent {
+    color: #FF6600;
+}
+.deck-container .slide .dark {
+    color: #333;
+}
+.deck-container section {
+    height: 100%;
+}
+.deck-container .slide img {
+    max-height: 70%;
+}
+.deck-container .slide h1 {
+    color: #5F6B77;
+    font-weight: bold;
+    
+}
+.deck-container .slide h2 {
+    color: #FF6600;
+    font-weight: bold;
+    font-family: "Volkhov";
+    border-bottom: solid 1px #5F6B77;
+}
+.deck-container .slide h3 {
+    font-family: "Volkhov";
+    color: #FF6600;
+}
+.deck-container .slide p{
+    color: #444;
+}
+.deck-container .slide li {
+    font-size: 1.75em;
+    color: #444;
+}
+.deck-container .slide pre {
+  padding: 1em;
+}
+.deck-container .slide code {
+    padding: .2em .5em .2em;
+
+}
+.deck-container .slide pre code {
+    padding: 0;
+
+}
+.deck-container .slide blockquote {
+    font-size: 1em;
+    font-family: "Volkhov";
+    font-style: italic;
+    padding: .1em .75em;    
+    border-left: 5px solid #154890;
+    color: #444;
+}
+.deck-container .slide .vcenter blockquote {
+    text-align: left;
+}
+.deck-container .slide blockquote p {
+    margin: 0;
+}
+.deck-container .slide blockquote cite {
+    font-size: .5em;
+    font-family: "Oxygen";
+    font-style: normal;
+    font-weight: bold;
+    color: #888;
+}
