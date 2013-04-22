@@ -8,13 +8,12 @@ body {
 }
 
 .middle{
-  width: 75%;
-  min-width: 500px;
+  width: 875px;
   margin: 0 auto;
 }
 
 .left{
-  width: 19%; 
+  width: 300px; 
   background-color: #FA6900;
   float: left;
   padding: 50px 20px 0px;
@@ -50,13 +49,13 @@ body {
 }
 
 .right{
-  width: 570px;
+  width: 475px;
   float:right;
-  margin-left: 15px;
+  margin-left: 50px;
 }
 
 .right p, .right h3, .right a{
-  color: #663366;
+  color: #222222;
 }
 
 .right a{
